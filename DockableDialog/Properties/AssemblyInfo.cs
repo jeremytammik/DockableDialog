@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("DockableDialog")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription( "Revit add-in implementing a simpler dockable panel sample" )]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyCompany("Autodesk")]
 [assembly: AssemblyProduct("DockableDialog")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2013")]
+[assembly: AssemblyCopyright("Copyright 2013-2015 (C) Jeremy Tammik, Autodesk Inc.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,12 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+//
+// History:
+//
+// 2015-03-02 2014.0.0.0 initial release for Revit 2014
+// 2015-03-02 2014.0.0.1 tested in Revit 2014, updated version number and .NET assembly properties
+//
+
+[assembly: AssemblyVersion("2014.0.0.1")]
+[assembly: AssemblyFileVersion("2014.0.0.1")]

@@ -2,7 +2,7 @@
 <RevitAddIns>
   <AddIn Type="Application">
     <Name>DockableDialog</Name>
-    <Assembly>c:\a\vs\DockableDialog\DockableDialog\bin\Debug\DockableDialog.dll</Assembly>
+    <Assembly>C:\a\vs\DockableDialog\DockableDialog\bin\Debug\DockableDialog.dll</Assembly>
     <AddInId>391067E6-979B-43EF-86AD-7B67B4FB0E96</AddInId>
     <FullClassName>DockableDialog.Ribbon</FullClassName>
     <VendorId>ADSK</VendorId>
