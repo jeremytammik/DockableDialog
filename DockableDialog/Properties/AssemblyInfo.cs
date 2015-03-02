@@ -38,7 +38,8 @@ using System.Runtime.InteropServices;
 // 2015-03-02 2014.0.0.0 initial release for Revit 2014
 // 2015-03-02 2014.0.0.1 tested in Revit 2014, updated version number and .NET assembly properties
 // 2015-03-02 2015.0.0.0 migrated to and tested in Revit 2015, updated version number
+// 2015-03-02 2015.0.0.1 added a XAML web browser control; click the buttons at the top to switch between The Building Coder and GitHub 
 //
 
-[assembly: AssemblyVersion("2015.0.0.0")]
-[assembly: AssemblyFileVersion("2015.0.0.0")]
+[assembly: AssemblyVersion("2015.0.0.1")]
+[assembly: AssemblyFileVersion("2015.0.0.1")]
