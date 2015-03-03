@@ -93,9 +93,51 @@ namespace DockableDialog.Forms
       web_browser.Navigate( _url_git );
     }
 
-    private void DockableDialogs_Loaded( object sender, RoutedEventArgs e )
+    private void DockableDialogs_Loaded( 
+      object sender, 
+      RoutedEventArgs e )
     {
+      web_browser.Navigated += new NavigatedEventHandler( 
+        WebBrowser_Navigated );
+
       web_browser.Navigate( _url_tbc );
     }
+
+    void WebBrowser_Navigated( 
+      object sender, 
+      NavigationEventArgs e )
+    {
+      HideJsScriptErrors( (WebBrowser) sender );
+    }
+
+    public void HideJsScriptErrors( WebBrowser wb )
+    {
+      // IWebBrowser2 interface
+      // Exposes methods that are implemented by the 
+      // WebBrowser control
+      // Searches for the specified field, using the 
+      // specified binding constraints.
+
+      FieldInfo fld = typeof( WebBrowser ).GetField( 
+        "_axIWebBrowser2", 
+        BindingFlags.Instance | BindingFlags.NonPublic );
+
+      if( null != fld )
+      {
+        object obj = fld.GetValue( wb );
+        if( null != obj )
+        {
+          // Silent: Sets or gets a value that indicates 
+          // whether the object can display dialog boxes.
+          // HRESULT IWebBrowser2::get_Silent(VARIANT_BOOL *pbSilent);
+          // HRESULT IWebBrowser2::put_Silent(VARIANT_BOOL bSilent);
+
+          obj.GetType().InvokeMember( "Silent", 
+            BindingFlags.SetProperty, null, obj, 
+            new object[] { true } );
+        }
+      }
+    }
+
   }
 }
