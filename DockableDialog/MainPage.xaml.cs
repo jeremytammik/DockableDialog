@@ -73,38 +73,46 @@ namespace DockableDialog.Forms
       m_targetGuid = targetGuid;
     }
 
-    private void PaneInfoButton_Click( object sender, RoutedEventArgs e )
-    {
-      web_browser.Navigate( _url_tbc );
-    }
-
-    private void wpf_stats_Click( object sender, RoutedEventArgs e )
-    {
-      web_browser.Navigate( _url_git );
-    }
-
-    private void btn_getById_Click( object sender, RoutedEventArgs e )
-    {
-      web_browser.Navigate( _url_tbc );
-    }
-
-    private void btn_listTabs_Click( object sender, RoutedEventArgs e )
-    {
-      web_browser.Navigate( _url_git );
-    }
-
-    private void DockableDialogs_Loaded( 
-      object sender, 
+    private void PaneInfoButton_Click(
+      object sender,
       RoutedEventArgs e )
     {
-      web_browser.Navigated += new NavigatedEventHandler( 
+      web_browser.Navigate( _url_tbc );
+    }
+
+    private void wpf_stats_Click(
+      object sender,
+      RoutedEventArgs e )
+    {
+      web_browser.Navigate( _url_git );
+    }
+
+    private void btn_getById_Click(
+      object sender,
+      RoutedEventArgs e )
+    {
+      web_browser.Navigate( _url_tbc );
+    }
+
+    private void btn_listTabs_Click(
+      object sender,
+      RoutedEventArgs e )
+    {
+      web_browser.Navigate( _url_git );
+    }
+
+    private void DockableDialogs_Loaded(
+      object sender,
+      RoutedEventArgs e )
+    {
+      web_browser.Navigated += new NavigatedEventHandler(
         WebBrowser_Navigated );
 
       web_browser.Navigate( _url_tbc );
     }
 
-    void WebBrowser_Navigated( 
-      object sender, 
+    void WebBrowser_Navigated(
+      object sender,
       NavigationEventArgs e )
     {
       HideJsScriptErrors( (WebBrowser) sender );
@@ -118,8 +126,8 @@ namespace DockableDialog.Forms
       // Searches for the specified field, using the 
       // specified binding constraints.
 
-      FieldInfo fld = typeof( WebBrowser ).GetField( 
-        "_axIWebBrowser2", 
+      FieldInfo fld = typeof( WebBrowser ).GetField(
+        "_axIWebBrowser2",
         BindingFlags.Instance | BindingFlags.NonPublic );
 
       if( null != fld )
@@ -132,12 +140,11 @@ namespace DockableDialog.Forms
           // HRESULT IWebBrowser2::get_Silent(VARIANT_BOOL *pbSilent);
           // HRESULT IWebBrowser2::put_Silent(VARIANT_BOOL bSilent);
 
-          obj.GetType().InvokeMember( "Silent", 
-            BindingFlags.SetProperty, null, obj, 
+          obj.GetType().InvokeMember( "Silent",
+            BindingFlags.SetProperty, null, obj,
             new object[] { true } );
         }
       }
     }
-
   }
 }
