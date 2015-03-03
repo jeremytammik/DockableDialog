@@ -6,7 +6,7 @@ Revit add-in implementing a simpler dockable panel sample as described in
 
 ## Dockable Web Browser
 
-Added a WPF WebBroswer control:
+Added a WPF WebBrowser control:
 
 ![Image](img/DockableWebBrowser_docked.png)
 
